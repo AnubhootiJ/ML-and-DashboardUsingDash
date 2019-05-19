@@ -36,7 +36,7 @@ reg2.fit(train_X, train_y)
 # y_forest = reg2.predict(test_X)
 print(reg2.score(test_X, test_y))
 
-from sklearn.externals import joblib
+import joblib
 joblib.dump(reg2, 'RF_model.pkl', compress=9)
 
 
