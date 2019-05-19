@@ -29,7 +29,7 @@ def update_data(date, tim, state, n_clicks):
         x = pd.DataFrame(data=d)
 
         # model = joblib.load("model.pkl")
-        answer = model.predict(x)[0]
+        answer = 0 # model.predict(x)[0]
         return "As per the calculations of our model, there is a probability of an earthquake occurring of magnitude {} and depth {} km".format(answer[0], answer[1])
 
 # ############################### -------  EARTHQUAKE CALLBACKS  ------- ######################################## #
