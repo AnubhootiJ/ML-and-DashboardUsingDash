@@ -12,8 +12,6 @@ import pandas as pd
 import io
 from flask import send_file
 
-model = joblib.load("RF_model.pkl")
-
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
