@@ -1,6 +1,6 @@
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
-from sklearn.externals import joblib
+import joblib
 from flask import Flask, render_template, request
 
 from plotly import tools
