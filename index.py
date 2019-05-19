@@ -24,7 +24,7 @@ def display_page(pathname):
         return layout_predict
     elif pathname == '/earthquake/':
         return layout_Earthquake
-    elif pathname == '/health/' or '/':
+    elif pathname == '/health/' or '//':
         return layout_Health
     else:
         return noPage
