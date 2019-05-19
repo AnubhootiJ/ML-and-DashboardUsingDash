@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 from layouts import layout_predict, layout_Earthquake, layout_Health, noPage
 from app import app
 from app import server
-from sklearn.externals import joblib
+import joblib
 import callbacks
 
 import pandas as pd
