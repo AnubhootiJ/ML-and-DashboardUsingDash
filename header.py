@@ -18,8 +18,9 @@ def get_menu():
     menu = html.Div([
 
         dcc.Link('Overview |', href='/overview/', className="tab"),
+        dcc.Link('Predict |', href='/predict/', className="tab"),
         dcc.Link('Earthquake (India) |', href='/earthquake/', className="tab"),
         dcc.Link('Health Statistics (Delhi) |', href='/health/', className="tab")
-
+        
     ], className="menu")
     return menu
