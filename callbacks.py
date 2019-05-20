@@ -11,10 +11,7 @@ import pandas as pd
 import json
 
 df_dim = pd.read_csv('data/Dimension.csv', encoding='latin-1')
-# model = joblib.load("RF_model.pkl")
-
-import pickle
-model = pickle.load(open("RF_model.pkl", 'rb'))
+model = joblib.load("RF_model.pkl")
 
 @app.callback(Output('output', component_property='children'),
               [Input('date1', 'date'),
