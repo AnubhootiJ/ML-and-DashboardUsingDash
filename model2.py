@@ -36,7 +36,9 @@ reg2.fit(train_X, train_y)
 # y_forest = reg2.predict(test_X)
 print(reg2.score(test_X, test_y))
 
-import joblib
-joblib.dump(reg2, 'RF_model.pkl', compress=9)
+# import joblib
+import pickle
+# joblib.dump(reg2, 'RF_model.pkl')
+pickle.dump(model, open("RF_model.pkl", 'wb'))
 
 
