@@ -1,14 +1,11 @@
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
-import joblib
-from flask import Flask, render_template, request
 
-from plotly import tools
 import datetime
 import time
 from app import app
 import pandas as pd
-import json
+import joblib
 
 df_dim = pd.read_csv('data/Dimension.csv', encoding='latin-1')
 model = joblib.load("RF_model.pkl")
@@ -31,6 +28,7 @@ def update_data(date, tim, state, n_clicks):
         # model = joblib.load("model.pkl")
         answer = model.predict(x)[0]
         return "As per the calculations of our model, there is a probability of an earthquake occurring of magnitude {} and depth {} km".format(answer[0], answer[1])
+
 
 # ############################### -------  EARTHQUAKE CALLBACKS  ------- ######################################## #
 
@@ -73,7 +71,7 @@ def update_graph_1(start_date, end_date):
     }
 
 
-# ############################### -------  HEALTH STATISTICS CALLBACKS  ------- ######################################## #
+# ############################### -------  HEALTH STATISTICS CALLBACKS  ------- ###################################### #
 
 df_health = pd.read_csv('data/Delhi Health WP data 2017.csv', encoding='latin-1')
 
@@ -102,7 +100,8 @@ def update_graph_2(start_date, end_date):
                     x=grp.index,
                     y=grp,
                     marker=dict(
-                        color=['#35af8a', '#00846e', '#4d6e81', '#00d2da', '#008695', '#35af8a', '#00846e', '#4d6e81', '#00d2da', '#008695', '#35af8a', '#00846e', '#4d6e81'
+                        color=['#35af8a', '#00846e', '#4d6e81', '#00d2da', '#008695', '#35af8a', '#00846e', '#4d6e81',
+                               '#00d2da', '#008695', '#35af8a', '#00846e', '#4d6e81'
                         ]),
                     )
                 ],

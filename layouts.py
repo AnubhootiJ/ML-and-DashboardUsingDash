@@ -3,9 +3,8 @@ import dash_html_components as html
 import dash_table
 from header import Header
 from app import app
-from datetime import datetime as dt
 import pandas as pd
-
+from datetime import datetime as dt
 
 # ############################### -------  INTRODUCTION LAYOUT  ------- ######################################## #
 
@@ -127,7 +126,6 @@ layout_Intro = html.Div([
 
 ], className='page')
 
-
 # ################################# -------  MODEL LAYOUT  ------- ######################################## #
 
 layout_predict = html.Div([
@@ -139,24 +137,29 @@ layout_predict = html.Div([
         html.Div([
 
             html.Div([
-                html.H4(["Traveling? Predict possibility of tremors in the area!"], className="Title", style={'marginTop': 15, 'background': '#00846e'}),
+                html.H4(["Traveling? Predict possibility of tremors in the area!"], className="Title",
+                        style={'marginTop': 15, 'background': '#00846e'}),
             ]),
 
             html.Div([
 
                 html.Div([
                     html.Label(["Pick Date:"]),
+                    html.Br(),
                     dcc.DatePickerSingle(id='date1',
                                          min_date_allowed=dt(2010, 8, 5),
                                          max_date_allowed=dt(2030, 9, 19),
                                          initial_visible_month=dt(2017, 8, 5),
-                                         date=dt(2017, 8, 5),
+                                         date=dt(2019, 8, 5),
                                          ),
                     ]),
 
                 html.Div([
-                    html.Label(["Give Time:  "]),
-                    dcc.Input(id='Time', placeholder='HH:MM:SS',)
+                    html.Label(["Give Time:"]),
+                    html.Br(),
+                    html.P(),
+                    dcc.Input(id='Time', placeholder='HH:MM:SS', style={'margin-left': 10, 'font-size': 15,
+                                                                        'padding': 12})
                 ]),
 
                 html.Div([
@@ -224,8 +227,10 @@ layout_Earthquake = html.Div([
         html.Div([
 
             html.Br(),
-            html.P("Natural disasters can be a dangerous ordeal, which is why it is always smart to be prepared fully. Here are some statistics for you to be prepared for your next trip!"),
-            html.P("Just pick a date range, it will show the data for that particular period of time only for easy navigation."),
+            html.P("Natural disasters can be a dangerous ordeal, which is why it is always smart to be prepared fully."
+                   " Here are some statistics for you to be prepared for your next trip!"),
+            html.P("Just pick a date range, it will show the data for that particular period of time only for easy "
+                   "navigation."),
             html.Label("Select Date range:"),
 
             dcc.DatePickerRange(            # Creating a Date Picker
@@ -238,7 +243,8 @@ layout_Earthquake = html.Div([
         ], className="date-picker"),
 
         html.Div([          # Giving a title
-          html.H4(["Earthquake Statistics in India"], className="Title", style={'marginTop': 15, 'background': '#00846e'})
+          html.H4(["Earthquake Statistics in India"], className="Title", style={'marginTop': 15,
+                                                                                'background': '#00846e'})
           ]),
 
         html.Div([
@@ -265,15 +271,17 @@ layout_Earthquake = html.Div([
     ], className="main-table"),
 
         html.Div([          # Giving a title for Graph 1
-          html.H4(["Statistics Graph by Magnitude and Date"], className="Title", style={'marginTop': 15, 'background': '#4d6e81'})
+          html.H4(["Statistics Graph by Magnitude and Date"], className="Title", style={'marginTop': 15,
+                                                                                        'background': '#4d6e81'})
           ], className="GraphTitle"),
 
         html.Div([          # Div for Earthquake Graph - Magnitude as per date picker
-        dcc.Graph(id='EarthquakeGraph')
+            dcc.Graph(id='EarthquakeGraph')
         ], className='row'),
 
         html.Div([          # Giving a title for Graph 2
-          html.H4(["Affected Areas by Longitude and Latitude"], className="Title", style={'marginTop': 15, 'background': '#00d2da'})
+          html.H4(["Affected Areas by Longitude and Latitude"], className="Title", style={'marginTop': 15,
+                                                                                          'background': '#00d2da'})
           ], className="GraphTitle"),
 
         html.Div([          # Div for Earthquake Graph - Scatter as per date picker
@@ -281,7 +289,8 @@ layout_Earthquake = html.Div([
         ], className='row'),
 
         html.Div([          # Giving a title for Graph 1
-          html.H4(["Map Depicting Earthquake Impact (Choropleth Graph)"], className="Title", style={'marginTop': 15, 'background': '#008695'})
+          html.H4(["Map Depicting Earthquake Impact (Choropleth Graph)"], className="Title",
+                  style={'marginTop': 15, 'background': '#008695'})
           ], className="MapTitle"),
 
         html.Div([  # Choropleth Map by Region Count
@@ -289,7 +298,8 @@ layout_Earthquake = html.Div([
         ], className='row'),
 
         html.Div([          # Giving a title for Graph 1
-          html.H4(["Map Depicting Earthquake Impact (Bubble Graph)"], className="Title", style={'marginTop': 15, 'background': '#35af8a'})
+          html.H4(["Map Depicting Earthquake Impact (Bubble Graph)"], className="Title",
+                  style={'marginTop': 15, 'background': '#35af8a'})
           ], className="MapTitle"),
 
         html.Div([  # Bubble Map by Region Count
@@ -320,8 +330,10 @@ layout_Health = html.Div([
         html.Div([
 
             html.Br(),
-            html.P("Health is a major issue especially when travelling to a new place. Here are some statistics that will give you an insight into the NCR region, the capital of India"),
-            html.P("Just pick a date range, it will show the data for that particular period of time only for easy navigation."),
+            html.P("Health is a major issue especially when travelling to a new place. Here are some statistics that "
+                   "will give you an insight into the NCR region, the capital of India"),
+            html.P("Just pick a date range, it will show the data for that particular period of time only for "
+                   "easy navigation."),
             html.Label("Select Date range:"),
 
             dcc.DatePickerRange(            # Creating a Date Picker
@@ -369,7 +381,8 @@ layout_Health = html.Div([
         ], className='row'),
 
         html.Div([          # Giving a title for Graph 2
-          html.H4(["Bar Graph for Reported Diseases in a Year "], className="Title", style={'marginTop': 15, 'background': '#00d2da'})
+          html.H4(["Bar Graph for Reported Diseases in a Year "], className="Title",
+                  style={'marginTop': 15, 'background': '#00d2da'})
           ], className="GraphTitle"),
 
         html.Div([          # Div for Health Graph
