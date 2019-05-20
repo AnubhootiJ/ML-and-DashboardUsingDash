@@ -123,6 +123,7 @@ layout_Earthquake = html.Div([
         dash_table.DataTable(           # Creating the data table for Earthquake
             id='datatable-Earthquake',
             columns=[{"name": i, "id": i} for i in df_EQ.columns],
+            n_fixed_rows=1,
             data=df_EQ.to_dict("rows"),
             filtering=True,
             sorting=True,
@@ -218,6 +219,7 @@ layout_Health = html.Div([
         dash_table.DataTable(           # Creating the data table for Health
             id='datatable-Health',
             columns=[{"name": i, "id": i} for i in df_health.columns],
+            n_fixed_rows=1,
             data=df_health.to_dict("rows"),
             filtering=True,
             sorting=True,
