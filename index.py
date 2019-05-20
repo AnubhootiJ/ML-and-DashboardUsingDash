@@ -2,7 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-from layouts import layout_predict, layout_Earthquake, layout_Health, noPage
+from layouts import layout_predict, layout_Intro, layout_Earthquake, layout_Health, noPage
 from app import app
 from app import server
 import joblib
