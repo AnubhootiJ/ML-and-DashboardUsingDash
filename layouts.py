@@ -17,6 +17,8 @@ layout_Intro = html.Div([
         html.Div([
 
             html.Br(),
+            html.Br(),
+            html.H3("INTRODUCTION"),
             html.P("Staying healthy is a basic requirement for any living being. We take several precautions to "
                    "maintain a healthy lifestyle. This can be endangered while travelling to a new place for school, "
                    "work, or just for some fun holiday trip; especially if there is no reliable information "
@@ -25,128 +27,98 @@ layout_Intro = html.Div([
                    "of how safe a region is to visit in medical terms. If we know that dengue is a common disease in "
                    "the rainy season in Delhi, anyone travelling to the region can take relevant precautions by"
                    "getting properly vaccinated. "),
-        ], className="Intro1"),
+        ], className="Intro"),
 
-        html.Div([          # Giving a title
-          html.H4(["About the Project"], className="Title", style={'marginTop': 15,
-                                                                   'background': '#35af8a'})
-          ]),
+        html.Div(className="Title", style={'marginTop': 15, 'background': '#35af8a'}),
 
         html.Div([
 
             html.Br(),
+            html.H3(["ABOUT THE PROJECT"]),
             html.P("The project is a multi-page dashboard application with interactive graphs and elements for great"
                    "user-friendly experience. The project is based on two main tools - "),
-            dcc.Markdown('''
-                1. Dash by plotly - to create the dashboard, frontend development
-                2. Python - for the backend development and models
-                
-                The project is divided into four tabs - 
-                1. Overview - basic introduction for the project
-                2. Predict - predicting earthquake at a given time, date, and place
-                3. Earthquake - statistics related to earthquake in India
-                4. Health - statistics related to Health in Delhi
-                
-                #### PREDICT TAB
-                The predictive model is not yet deployed. Though, the tab basically gives the prediction of the 
-                magnitude and depth by which an earthquake can occur given a date, time and region inputted by the user.
-                
-            '''
-            )
+
+            html.P("1. Dash by plotly - to create the dashboard, frontend development"),
+            html.P("2. Python - for the backend development and models"),
+
+            html.P("The project is divided into four tabs - "),
+
+            html.P("1. Overview - basic introduction for the project"),
+            html.P("2. Predict - predicting earthquake at a given time, date, and place"),
+            html.P("3. Earthquake - statistics related to earthquake in India"),
+            html.P("4. Health - statistics related to Health in Delhi"),
+
+            html.H3(["PREDICT TAB"]),
+            html.P("The predictive model is not yet deployed. Though, the tab basically gives the prediction of the "
+                   "magnitude and depth by which an earthquake can occur given a date, time and region inputted by the "
+                   "user."),
+
         ], className="Intro1"),
 
-        html.Div([          # Giving a title
-            html.H4(["Different statistical elements in the Earthquake tab"], className="Title",
-                    style={'marginTop': 15, 'background': '#008695'})
-            ]),
+        html.Div(className="Title", style={'marginTop': 15, 'background': '#008695'}),
 
         html.Div([
 
             html.Br(),
-            dcc.Markdown('''
-                #### FIRST ELEMENT - DATE PICKER AND TABLE
-                
-                Our first element in the Earthquake tab is the data table and date picker associated to it. As per the
-                date picker, you can select the date range for which to view the data. 
-                
-                #### SECOND ELEMENT - GRAPH BASED ON YEAR
-                
-                The second element is a statistical graph giving a scatter of data points by magnitude each year. It 
-                will change with the date picker. You can also click on a specific portion to focus on a particular 
-                year, month, or date.  
-                
-                #### THIRD ELEMENT - WORLD MAP
-                
-                The third element is our data set plotted on a world map. You can see that most of our data is
-                based on earthquake that occurred in India and neighboring countries. 
-                
-                #### FOURTH ELEMENT - CHOROPLETH AND BUBBLE GRAPHS FOR INDIA
-                
-                The fourth element consists of two graphs - one a choropleth graph and other the bubble graph both
-                depicting the impact of earthquake in different regions of India. 
+            html.H3("DIFFERENT STATISTICAL ELEMENTS IN THE EARTHQUAKE TAB"),
+            html.H4("FIRST ELEMENT - DATE PICKER AND TABLE"),
+            html.P("Our first element in the Earthquake tab is the data table and date picker associated to it. As per "
+                   "the date picker, you can select the date range for which to view the data. "),
 
-            '''
-                         )
+            html.H4("SECOND ELEMENT - GRAPH BASED ON YEAR"),
+            html.P("The second element is a statistical graph giving a scatter of data points by magnitude each year. "
+                   "It will change with the date picker. You can also click on a specific portion to focus on a "
+                   "particular year, month, or date.  "),
+
+            html.H4("THIRD ELEMENT - WORLD MAP"),
+            html.P("The third element is our data set plotted on a world map. You can see that most of our data is"
+                   "based on earthquake that occurred in India and neighboring countries. "),
+
+            html.H4("FOURTH ELEMENT - CHOROPLETH AND BUBBLE GRAPHS FOR INDIA"),
+            html.P("The fourth element consists of two graphs - one a choropleth graph and other the bubble graph both"
+                   "depicting the impact of earthquake in different regions of India. "),
+
         ], className="Intro2"),
 
-        html.Div([          # Giving a title
-            html.H4(["Different statistical elements in the Health tab"], className="Title",
-                    style={'marginTop': 15, 'background': '#00d2da'})
-            ]),
+        html.Div(className="Title", style={'marginTop': 15, 'background': '#00d2da'}),
 
         html.Div([
 
             html.Br(),
-            dcc.Markdown('''
-                #### FIRST ELEMENT - DATE PICKER AND TABLE
+            html.H3("DIFFERENT STATISTICAL ELEMENTS IN THE HEALTH TAB"),
+            html.H4("FIRST ELEMENT - DATE PICKER AND TABLE"),
+            html.P("Our first element in the Health tab is the data table and date picker associated to it. As per the"
+                   "date picker, you can select the date range for which to view the data. "),
 
-                Our first element in the Health tab is the data table and date picker associated to it. As per the
-                date picker, you can select the date range for which to view the data. 
+            html.H4("SECOND ELEMENT - GRAPH BY OCCURRENCE"),
+            html.P("The second element is a statistical graph giving a bar plot by occurrence every month in the year "
+                   "of 2016. To view a particular month or months, you can focus by clicking on that specific region."),
 
-                #### SECOND ELEMENT - GRAPH BY OCCURRENCE
+            html.H4("THIRD ELEMENT - GRAPH BY DISEASE"),
+            html.P("The third element is a statistical graph giving a bar plot by disease in the year of 2016. To view "
+                   "a particular disease or diseases, you can focus by clicking on that specific region. "),
 
-                The second element is a statistical graph giving a bar plot by occurrence every month in the year of 
-                2016. To view a particular month or months, you can focus by clicking on that specific region.   
+            html.H4("FOURTH ELEMENT - TOP 5 DISEASES BY MONTH"),
+            html.P("The fourth element is a bar graph showing top 5 diseases every month. You can pick the month you "
+                   "want to view the top 5 diseases of from the dropdown just above the graph. "),
 
-                #### THIRD ELEMENT - GRAPH BY DISEASE
+            html.H4("FIFTH ELEMENT - TOP 5 DISEASES BY REGION"),
+            html.P("The fourth element is a bar graph showing top 5 diseases in every region. You can pick the region "
+                   "you want to view the top 5 diseases of from the dropdown just above the graph. "),
 
-                The third element is a statistical graph giving a bar plot by disease in the year of 2016. To view a 
-                particular disease or diseases, you can focus by clicking on that specific region. 
-
-                #### FOURTH ELEMENT - TOP 5 DISEASES BY MONTH
-
-                The fourth element is a bar graph showing top 5 diseases every month. You can pick the month you want
-                to view the top 5 diseases of from the dropdown just above the graph. 
-                
-                #### FIFTH ELEMENT - TOP 5 DISEASES BY REGION
-
-                The fourth element is a bar graph showing top 5 diseases in every region. You can pick the region you 
-                want to view the top 5 diseases of from the dropdown just above the graph. 
-
-            '''
-                         )
         ], className="Intro3"),
 
-        html.Div([          # Giving a title
-            html.H4(["About the Team"], className="Title", style={'marginTop': 15,
-                                                                  'background': '#4d6e81'})
-            ]),
+        html.Div(className="Title", style={'marginTop': 15, 'background': '#4d6e81'}),
 
         html.Div([
 
             html.Br(),
+            html.H3("ABOUT THE TEAM"),
+            html.P("The project was developed as a major project by team of three B.tech CSE students in 2019 -"),
+            html.P("ANUBHOOTI JAIN "),
+            html.P("PRAKHARI JAIN"),
+            html.P("SAHIL DHAWAN"),
 
-            dcc.Markdown('''
-                The project was developed as a major project by team of 3 B.tech CSE students in 2019 -
-                
-                ANUBHOOTI JAIN 
-                
-                PRAKHARI JAIN
-                
-                SAHIL DHAWAN
-
-            '''
-                         )
         ], className="Intro4"),
 
         html.Div(className="Title", style={'marginTop': 15, 'background': '#00846e'}),
