@@ -20,12 +20,12 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/overview/':
-        return layout_predict
-    elif pathname == '/earthquake/':
+    if pathname == '/earthquake/':
         return layout_Earthquake
-    elif pathname == '/health/' or '//':
+    elif pathname == '/health/':
         return layout_Health
+    elif pathname == '/overview/' or '/':
+        return layout_Intro
     else:
         return noPage
 
