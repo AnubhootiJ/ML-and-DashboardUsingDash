@@ -18,4 +18,4 @@ prone areas, graphs and maps. The project is deployed on Heroku.
 - callbacks.py -> Python functions used to make the dashboard interactive. 
 - model2.py -> ML Model to predict the earthquake. 
 
-Note : I submitted this as my Majpr Project in college back in 2019. 
+Note : I submitted this as my Major Project in college back in 2019. 
